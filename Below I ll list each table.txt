@@ -1,0 +1,80 @@
+
+
+Below, I’ll list each table (entity) and its columns one by one, ensuring a logical relational structure.
+
+Relationships (in Eloquent Terms)
+
+1. Table: Customer
+Table Name: Customer (or Customers as per OCR)
+Columns:
+customer_id
+customer_name
+contact_name
+address
+city
+postal_code
+country
+2. Table: Employee
+Table Name: Employee (or Employees)
+Columns:
+employee_id
+first_name
+last_name
+title
+hire_date
+address
+city
+postal_code
+country
+3. Table: Shipper
+Table Name: Shipper (or Shippers)
+Columns:
+shipper_id
+shipper_name
+phone
+4. Table: Order
+Table Name: Order (or Orders)
+Columns:
+order_id
+customer_id (foreign key referencing Customer(customer_id))
+employee_id (foreign key referencing Employee(employee_id))
+shipper_id (foreign key referencing Shipper(shipper_id))
+order_date
+shipped_date
+ship_address
+ship_city
+ship_postal_code
+ship_country
+5. Table: OrderDetail
+Table Name: OrderDetail (or OrderDetails)
+Columns:
+order_detail_id
+order_id (foreign key referencing Order(order_id))
+product_id (foreign key referencing Product(product_id))
+quantity
+unit_price
+6. Table: Product
+Table Name: Product (or Products)
+Columns:
+product_id
+product_name
+supplier_id (foreign key referencing Supplier(supplier_id))
+category_id (foreign key referencing Category(category_id))
+unit_price
+units_in_stock
+7. Table: Category
+Table Name: Category (or Categories)
+Columns:
+category_id
+category_name
+description
+8. Table: Supplier
+Table Name: Supplier (or Suppliers)
+Columns:
+supplier_id
+supplier_name
+contact_name
+address
+city
+postal_code
+country
